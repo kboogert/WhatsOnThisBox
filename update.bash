@@ -15,8 +15,7 @@ while [ -e "$file" ]; do
 done
 # echo $file
 
-echo -e "******* What's on this Box *******\n"
-echo -e "******* What's on this Box *******\n" > $file
+echo "******* What's on this Box *******" > $file
 if [ -e $txtfile ]; then
   cat $txtfile >> $file
 fi
@@ -53,23 +52,25 @@ echo  >> $file
 
 # pwd; ls -t $base"-*.txt"
 previousUpdate=`ls -t $base-*.txt | sed -n 2p`
-# echo -e "previousUpdate = $previousUpdate \n file = $file"
+# echo "previousUpdate = $previousUpdate \n file = $file"
+echo "******* What's on this Box *******"; echo " "
 if [ -e "$previousUpdate" ]; then
 	cmp --silent $previousUpdate $file
 	if [ $? -ne 0 ] ; then
 		# files are different
-		echo -e "Configuration has differences"
-    echo -e ">From diff $previousUpdate $file"
+		echo "Configuration has differences"
+    echo ">From diff $previousUpdate $file"
 		diff $previousUpdate $file
  	else
-		echo -e "No differences"
+		echo "No differences"
 		rm $previousUpdate
 	fi
 else
-	echo -e "No previous update found"
+	echo "No previous update found"
 fi
 ln -Fs $file $base".txt"
-echo -e "\n$base.txt for What's On This Box updated"
+echo " "
+echo "$base.txt for What's On This Box updated"
 count=`ls -t "$base"-*.txt | tail -n +4 | wc -l | tr -d '[:space:]'`
 ls -t "$base"-*.txt | tail -n +4 | xargs rm --
 if [ $count -gt 1 ]; then
@@ -80,9 +81,9 @@ fi
 num=`ls -t "$base"-*.txt  | wc -l`
 if [ $num -lt 1 ]; then
 	echo "Error: No configuration files exist"
-	#exit 1
+	exit 1
 fi
-#exit
+exit
 # ls -lat WhatsOnThisBox-*.txt
 # ls -la WhatsOnThisBox.txt
 
