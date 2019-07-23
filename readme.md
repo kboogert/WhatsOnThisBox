@@ -1,181 +1,78 @@
-<a href="http://fvcproductions.com"><img src="https://avatars1.githubusercontent.com/u/4284691?v=3&s=200" title="FVCproductions" alt="FVCproductions"></a>
-
-<!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
-
-***INSERT GRAPHIC HERE (include hyperlink in image)***
-
 # What On This Box
 
 > Utility to save to a file all the stuff installed on this box.  This includes apps install in the /Application folder, as well as stuff install by Homebrew, and npm.
-
-
-
----
-
-## Table of Contents (Optional)
-
-> If you're `README` has a lot of info, section headers might be nice.
-
-- [Installation](#installation)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
-
-
----
-
-## Example (Optional)
-
-```javascript
-// code away!
-
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
-```
 
 ---
 
 ## Installation
 
-- Download this project and unzip file in your home directory.
-  This will create a .WhatsOnThisBox directory (hidden)
+1. Download this project zip file 
 
-- Manually run by typing  
- \>source ~/.WhatsOnThisBox/update.bash
+2. Unzip file in your home directory.
 
-- Test installation.  
- \>cat .WhatsOnThisBox/WhatsOnThisBox.txt 
+3. (Optional) Hide the directory by renaming with a leading period  
+  ```shell
+  $ mv WhatsOnThisBox .WhatsOnThisBox
+  ```
+4. (Optional) Add content to update.txt  
+    Look at update.kcb for an example  
+    This file will be inserted in the output file
 
+5. Test installation  
+    Manually run update.bash  
+```shell
+ $ bash ~/.WhatsOnThisBox/update.bash
+```
+- Check output
+```shell
+ $ cat .WhatsOnThisBox/WhatsOnThisBox.txt 
+```
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/fvcproductions/SOMEREPO`
+- Clone this repo to your local machine using `https://github.com/kboogert/WhatsOnThisBox.git`
 
 ### Setup
 
-- If you want more syntax highlighting, format your code like this:
+To update the  WhatsOnThisBox.txt file
+ 1) To update the file daily at noon
+    Put it in cron.  The example runs daily at noon
+    ```shell
+    $ crontab -e
 
-> update and install this package first
-
-```shell
-$ brew update
-$ brew install fvcproductions
+    add following line (starting with 00)
+      00 12 * * * source /Users/[YOUR_HOMEDIR]/.WhatsOnThisBox/update.bash
+    ```
+ 2) To update the file at every login (maybe an overkill)  
+     Add in .bash_profile.
+ ```shell
+     if [ -f "~/.WhatsOnThisBox" ]; then
+         source  ~/.WhatsOnThisBox/update.bash
+     fi
+  ```
+ 3) Run manually
+ ```shel
+    $ bash ~/.WhatsOnThisBox/update.bash
 ```
-
-> now install npm and bower packages
-
-```shell
-$ npm install
-$ bower install
-```
-
-- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
-
----
-
-## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
-
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
-
----
-
-## Contributing
-
-> To get started...
-
-### Step 1
-
-- **Option 1**
-    - 🍴 Fork this repo!
-
-- **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
-
-### Step 2
-
-- **HACK AWAY!** 🔨🔨🔨
-
-### Step 3
-
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
-
----
-
-## Team
-
-> Or Contributors/People
-
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
-
-- You can just grab their GitHub profile image URL
-- You should probably resize their picture using `?s=200` at the end of the image URL.
 
 ---
 
 ## FAQ
 
-- **How do I do *specifically* so and so?**
-    - No problem! Just do this.
+- **Can I get npm install packages that are locally installed?**
+    - Yes.  You will need to edit the update.bash and uncomment lines at about 43.  If you want other directorys and want to get the npm install, just add addition blocks like the one given.
+
+  **Will these file fill up my directory?**
+    - No. First if the content of the WhatsOnThisBox.txt is the same as the previous run, a new file is not saved.  Also only the 3 most recent output files are saved.  
 
 ---
 
-## Support
-
-Reach out to me at one of the following places!
-
-- Website at <a href="http://fvcproductions.com" target="_blank">`fvcproductions.com`</a>
-- Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
-- Insert more social links here.
-
----
-
-## Donations (Optional)
-
-- You could include a <a href="https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png" target="_blank">Gratipay</a> link as well.
-
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/fvcproductions/)
-
-
----
 
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
-#----------------------------------------------------------------------------------------------
-#
-# To update the  WhatsOnThisBox.txt file
-#
-#  1) To update the file daily at noon
-#     Put it in cron.  The example runs daily at noon
-#     >crontab -e
-#
-#     add following line (starting with 00)
-#       00 12 * * * source /Users/[YOUR HOMEDIR]/.WhatsOnThisBox/update.bash
-#
-#  2) To update the file at every login (maybe an overkill)
-#      Add in .bash_profile.
-#      if [ -f "~/.WhatsOnThisBox" ]; then
-#          source  ~/.WhatsOnThisBox/update.bash
-#      fi
-#  3) Run manually
-#     >source ~/.WhatsOnThisBox/update.bash
-#
-#----------------------------------------------------------------------------------------------
+- Copyright 2019 © <a href="http://www.boogert.com" target="_blank">Kent Boogert</a>
+
 
