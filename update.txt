@@ -1,15 +1,30 @@
-Place any text in update.txt you want to copy into the WhatsOnThisBox.txt file.
-
-For example, You could say something like
+This file contains a listing of the major things installed on this box.
 
 My basic first installs on a new box are the following:
-Chrome (with the following extentions)
-  LastPass
-  Switcher for Lastpass
-LastPass
-Alfred 3
-BetterTouchTool
-iTerm
-xcode (required for homebrew)
-homebrew
+	Chrome (with the following extentions)
+		LastPass
+		Switcher for Lastpass
+		Evernote Web Clipper
+	LastPass
+	Alfred 3
+	BetterTouchTool
+	iTerm
+	xcode (required for homebrew)
+	homebrew
+
+Eventually I will add these:
+	CheatSheet
+	Evernote
+	Adobe Apps
+	Microsoft Office
+	Itsycal
+	AppCleaner
+	DaisyDisk
+
+
+For development
+	WebStorm (I use VS code now)
+	Camtasia (older subscription now)
+	Snagith (older subscription
+	VMware Fusion (?? older but works)
 
