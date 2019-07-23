@@ -1,0 +1,15 @@
+Place any text in update.txt you want to copy into the WhatsOnThisBox.txt file.
+
+For example, You could say something like
+
+My basic first installs on a new box are the following:
+Chrome (with the following extentions)
+  LastPass
+  Switcher for Lastpass
+LastPass
+Alfred 3
+BetterTouchTool
+iTerm
+xcode (required for homebrew)
+homebrew
+
