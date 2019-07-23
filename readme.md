@@ -15,7 +15,6 @@
   $ mv WhatsOnThisBox .WhatsOnThisBox
   ```
 4. (Optional) Add content to update.txt  
-    Look at update.kcb for an example  
     This file will be inserted in the output file
 
 5. Test installation  
