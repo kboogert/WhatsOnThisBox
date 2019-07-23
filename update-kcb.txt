@@ -8,7 +8,6 @@ My basic first installs on a new box are the following:
 	LastPass
 	Alfred 3
 	BetterTouchTool
-	Itsycal
 	iTerm
 	xcode (required for homebrew)
 	homebrew
@@ -18,6 +17,7 @@ Eventually I will add these:
 	Evernote
 	Adobe Apps
 	Microsoft Office
+	Itsycal
 	AppCleaner
 	DaisyDisk
 
