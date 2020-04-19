@@ -50,6 +50,13 @@ echo "----- brew list ----------------------------------------------------------
 /usr/local/bin/brew list >> $file
 echo  >> $file
 
+echo "----- VSCODE Extensions ----------------------------------------------------" >> $file
+code --list-extensions --show-versions >> $file
+echo  >> $file
+
+
+# -----Save all the stuff now ----------------------
+
 # pwd; ls -t $base"-*.txt"
 previousUpdate=`ls -t $base-*.txt | sed -n 2p`
 # echo "previousUpdate = $previousUpdate \n file = $file"
@@ -77,6 +84,7 @@ if [ $count -gt 1 ]; then
 	echo " - $count older files removed"
 fi
 
+
 # check if no files exist.... something when very bad
 num=`ls -t "$base"-*.txt  | wc -l`
 if [ $num -lt 1 ]; then
@@ -86,4 +94,5 @@ fi
 exit
 # ls -lat WhatsOnThisBox-*.txt
 # ls -la WhatsOnThisBox.txt
+
 
