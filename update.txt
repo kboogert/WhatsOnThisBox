@@ -4,27 +4,53 @@ My basic first installs on a new box are the following:
 	Chrome (with the following extentions)
 		LastPass
 		Switcher for Lastpass
-		Evernote Web Clipper
-	LastPass
-	Alfred 3
-	BetterTouchTool
-	iTerm
-	xcode (required for homebrew)
+
+  xcode (required for homebrew)
+    also installs git
+
 	homebrew
+
+  Install following with brew
+    iTerm2
+      - Configured iTerm with Oh-My-Zsh and Powerlevel10k (see https://www.youtube.com/watch?v=CF1tMjvHDRA)
+      - text instructions here https://www.josean.com/posts/terminal-setup
+      - I use the cobalt2 theme in vscode and iterm
+    Visual Studio (sync settings - https://code.visualstudio.com/docs/editor/settings-sync)
+      - unfortunately profiles are not synced (See https://code.visualstudio.com/docs/editor/profiles)
+      - I use fira-code font (also installed with brew)
+    powerlevel10k
+
+	Menslo LGS NF font (used by oh-my-zsh)
+    Get at https://github.com/romkatv/powerlevel10k/blob/master/font.md
+  LastPass
+	BetterTouchTool
+	Alfred 5
+
+
 
 Eventually I will add these:
 	CheatSheet
-	Evernote
-	Adobe Apps
-	Microsoft Office
 	Itsycal
 	AppCleaner
 	DaisyDisk
+  Google Drive
+	Microsoft Office 365
+	Adobe Apps
 
 
 For development
-	WebStorm (I use VS code now)
-	Camtasia (older subscription now)
-	Snagith (older subscription
-	VMware Fusion (?? older but works)
+  vscode - installed earlier
+  docker - installed with brew
+    PHPdevEnv - https://github.com/kboogert/PHPdevEnv
+        php
+        php composer
+        mysql
+        phpmyadmin
+  postman - installed with brew
+
+Of note
+	Awesome: liquidprompt - great alternative to powerlevel10k
+	Awesome: php version switcher sphp -
+		https://getgrav.org/blog/macos-catalina-apache-multiple-php-versions
+
 

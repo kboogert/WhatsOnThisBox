@@ -47,10 +47,13 @@ echo  >> $file
 # echo  >> $file
 
 echo "----- brew list ------------------------------------------------------------" >> $file
-/usr/local/bin/brew list >> $file
+# brew leaves show all top-level packages i.e. packages that are not dependencies.
+/opt/homebrew/bin/brew bundle dump --file - | grep '^brew\|^cask'     >> $file
+# /opt/homebrew/bin/brew bundle dump --file - | grep '^brew\|^cask' | sed 's/.* "\(.*\)".*$/\1/'    >> $file
+# /opt/homebrew/bin/brew list >> $file
 echo  >> $file
 
-echo "----- VSCODE Extensions ----------------------------------------------------" >> $file
+echo "----- VSCODE Extensions list -----------------------------------------------" >> $file
 code --list-extensions --show-versions >> $file
 echo  >> $file
 
